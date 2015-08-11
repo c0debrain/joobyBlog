@@ -1,6 +1,7 @@
 package com.viator.tgds;
 
 import org.jooby.Jooby;
+import org.jooby.Results;
 import org.jooby.ftl.Ftl;
 
 /**
@@ -12,7 +13,7 @@ public class App extends Jooby {
     use(new Ftl());
     assets("/assets/**");
 
-    assets("/", "/index.html");
+    get("/", req -> Results.html("index").put("appName","Tgds Auto Conf"));
   }
 
   public static void main(final String[] args) throws Exception {

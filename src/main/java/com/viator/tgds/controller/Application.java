@@ -15,6 +15,7 @@
  */
 package com.viator.tgds.controller;
 
+import com.typesafe.config.ConfigValue;
 import com.typesafe.config.ConfigValueFactory;
 import org.jooby.Result;
 import org.jooby.Results;
@@ -31,8 +32,8 @@ public class Application {
   
   @GET
   public Result index() {
-    String appName = ConfigValueFactory.fromAnyRef("app.name").toString();
-    return Results.html("index").put("appName",appName);
+    ConfigValue appName = ConfigValueFactory.fromAnyRef("app.name");
+    return Results.html("index").put("appName","my crzy app name");
   }
   
   @GET

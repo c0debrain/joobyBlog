@@ -1,6 +1,7 @@
 package com.viator.tgds;
 
 import org.jooby.Jooby;
+import org.jooby.ftl.Ftl;
 
 /**
  * @author jooby generator
@@ -8,6 +9,7 @@ import org.jooby.Jooby;
 public class App extends Jooby {
 
   {
+    use(new Ftl());
     assets("/assets/**");
 
     assets("/", "/index.html");
